@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     private lateinit var profileCircleImageView: CircleImageView
-    private var profileImageUrl = "https://lh3.googleusercontent.com/-4qy2DfcXBoE/AAAAAAAAAAI/AAAAAAAABi4/rY-jrtntAi4/s640-il/photo.jpg"
+    private var profileImageUrl =
+        "https://lh3.googleusercontent.com/-4qy2DfcXBoE/AAAAAAAAAAI/AAAAAAAABi4/rY-jrtntAi4/s640-il/photo.jpg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +45,13 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this)
             .load(profileImageUrl)
             .into(profileCircleImageView)
-        appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
+
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_cart
+            ),
+            drawerLayout
+        )
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         setupActionBarWithNavController(navController, appBarConfiguration)
